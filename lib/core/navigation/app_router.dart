@@ -1,6 +1,7 @@
 import 'package:act_tracker/core/navigation/guards/guards.dart';
 import 'package:act_tracker/features/auth/presentation/pages/pages.dart';
 import 'package:act_tracker/features/home/presentation/pages/pages.dart';
+import 'package:act_tracker/features/settings/presentation/pages/pages.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 
@@ -16,7 +17,10 @@ class AppRouter extends RootStackRouter {
       guards: [AuthGuard()],
       path: '/',
       initial: true,
-      children: [CustomRoute(page: HomeRoute.page, path: 'home', initial: true)],
+      children: [
+        CustomRoute(page: HomeRoute.page, path: 'home', initial: true),
+        CustomRoute(page: SettingsRoute.page, path: 'settings'),
+      ],
     ),
   ];
 }

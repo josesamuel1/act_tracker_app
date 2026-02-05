@@ -73,6 +73,13 @@ class AppItems {
         route: const HomeRoute(),
         currentRoute: currentRoute,
       ),
+      AppNavBarItem(
+        icon: Icons.settings_outlined,
+        activeIcon: Icons.settings,
+        label: HomeStrings.settingsNavBar,
+        route: const SettingsRoute(),
+        currentRoute: currentRoute,
+      ),
     ];
   }
 }
