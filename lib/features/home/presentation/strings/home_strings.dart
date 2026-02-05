@@ -11,4 +11,7 @@ class HomeStrings {
   // NavBar
   static String get homeNavBar =>
       _isPortuguese ? HomeStringsPt.homeNavBar : HomeStringsEn.homeNavBar;
+
+  static String get settingsNavBar =>
+      _isPortuguese ? HomeStringsPt.settingsNavBar : HomeStringsEn.settingsNavBar;
 }
