@@ -7,6 +7,8 @@ class LoginUseCase {
 
   // Login a user and return the user if found, otherwise return null
   Future<UserEntity?> call({required String username, required String password}) async {
-    return await repository.login(username: username, password: password);
+    final result = await repository.login(username: username, password: password);
+
+    return result;
   }
 }

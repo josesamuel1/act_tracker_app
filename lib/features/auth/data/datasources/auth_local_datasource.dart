@@ -8,22 +8,22 @@ abstract class AuthLocalDatasource {
 }
 
 class AuthLocalDatasourceImpl implements AuthLocalDatasource {
+  final Database _db;
+
+  AuthLocalDatasourceImpl(this._db);
+
   // Register a new user in the database
   @override
   Future<void> register({required UserModel user}) async {
-    final db = await AppDatabase.instance;
-
     final userJson = user.toJson();
 
-    await db.insert(UserTable.tableName, userJson, conflictAlgorithm: ConflictAlgorithm.abort);
+    await _db.insert(UserTable.tableName, userJson, conflictAlgorithm: ConflictAlgorithm.abort);
   }
 
   // Login a user and return the user if found, otherwise return null
   @override
   Future<UserModel?> login({required String username, required String passwordHash}) async {
-    final db = await AppDatabase.instance;
-
-    final result = await db.query(
+    final result = await _db.query(
       UserTable.tableName,
       where: '${UserTable.username} = ? AND ${UserTable.passwordHash} = ?',
       whereArgs: [username, passwordHash],

@@ -2,6 +2,7 @@ import 'package:act_tracker/core/di/injection_container.dart';
 import 'package:act_tracker/core/navigation/navigation.dart';
 import 'package:act_tracker/core/strings/core_strings.dart';
 import 'package:act_tracker/features/auth/presentation/cubit/auth_page_cubit.dart';
+import 'package:act_tracker/features/home/presentation/cubit/home_page_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,7 +13,10 @@ void main() async {
 
   runApp(
     MultiBlocProvider(
-      providers: [BlocProvider(create: (_) => getIt<AuthPageCubit>())],
+      providers: [
+        BlocProvider(create: (_) => getIt<AuthPageCubit>()),
+        BlocProvider(create: (_) => getIt<HomePageCubit>()),
+      ],
       child: ActTracker(),
     ),
   );

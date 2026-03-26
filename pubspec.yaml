@@ -23,6 +23,7 @@ dependencies:
   crypto: ^3.0.7
   logger: ^2.6.2
   get_it: ^9.2.0
+  syncfusion_flutter_calendar: ^32.1.23
 
 dev_dependencies:
   flutter_test:

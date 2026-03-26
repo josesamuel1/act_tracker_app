@@ -1,6 +1,7 @@
 import 'package:act_tracker/core/crypto/password_hasher.dart';
 import 'package:act_tracker/core/data/mixins/user.mixin.dart';
-import 'package:act_tracker/features/auth/auth.dart';
+import 'package:act_tracker/features/auth/data/data.dart';
+import 'package:act_tracker/features/auth/domain/domain.dart';
 
 class AuthRepositoryImpl with UserMixin implements AuthRepository {
   final AuthLocalDatasource local;

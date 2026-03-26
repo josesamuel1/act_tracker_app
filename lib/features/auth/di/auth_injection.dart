@@ -5,7 +5,7 @@ final getIt = GetIt.instance;
 
 Future<void> initAuth() async {
   // Data
-  getIt.registerLazySingleton<AuthLocalDatasource>(() => AuthLocalDatasourceImpl());
+  getIt.registerLazySingleton<AuthLocalDatasource>(() => AuthLocalDatasourceImpl(getIt()));
   getIt.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(local: getIt()));
 
   // UseCases
